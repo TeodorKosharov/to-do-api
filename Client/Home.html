@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To do app client</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="formsHandlers.js" defer></script>
+</head>
+<body>
+<h1>To do app</h1>
+
+<h2>Add task</h2>
+<form class="add-task-form" method="POST" onsubmit="sendAddTaskForm()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Task name">
+
+    <label for="difficulty">Difficulty:</label>
+    <input type="text" id="difficulty" name="difficulty" placeholder="Task difficulty">
+
+    <label for="priority">Priority:</label>
+    <input type="text" id="priority" name="priority" placeholder="Task priority">
+
+    <button id="add-btn" type="submit">Add</button>
+</form>
+
+<h2 class="edit-task-title">Details task</h2>
+<form class="details-task-form" method="POST" onsubmit="sendDetailsForm()">
+    <label for="task-name">Task name: </label>
+    <input type="text" id="task-name" name="task-name" placeholder="Task name...">
+    <button id="add-btn" type="submit">Details</button>
+</form>
+
+</body>
+</html>
