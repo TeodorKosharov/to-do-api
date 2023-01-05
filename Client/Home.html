@@ -10,8 +10,9 @@
 <body>
 <h1>To do app</h1>
 
+<!-- Add task -->
 <h2>Add task</h2>
-<form class="add-task-form" method="POST" onsubmit="sendAddTaskForm()">
+<form class="add-task-form" method="POST" onsubmit="handleAddTaskForm()">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" placeholder="Task name">
 
@@ -24,12 +25,19 @@
     <button id="add-btn" type="submit">Add</button>
 </form>
 
+<!-- Edit task -->
 <h2 class="edit-task-title">Details task</h2>
-<form class="details-task-form" method="POST" onsubmit="sendDetailsForm()">
+<form class="details-task-form" method="POST" onsubmit="handleDetailsForm()">
     <label for="task-name">Task name: </label>
     <input type="text" id="task-name" name="task-name" placeholder="Task name...">
     <button id="add-btn" type="submit">Details</button>
 </form>
+
+<!-- List tasks -->
+<h2 class="list-tasks-title">List of all tasks</h2>
+<div class="tasks-list-box">
+    <ul id="tasks-list"></ul>
+</div>
 
 </body>
 </html>

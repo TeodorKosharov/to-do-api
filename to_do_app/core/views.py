@@ -1,9 +1,8 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-
 from to_do_app.core.models import Task
 from to_do_app.core.serializers import TaskSerializer
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView
 
 
 @api_view(['GET', 'POST'])
@@ -26,3 +25,8 @@ class CreateTask(CreateAPIView):
     def post(self, request, *args, **kwargs):
         super().post(request, *args, **kwargs)
         return Response('Task created successfully!')
+
+
+class ListTasks(ListAPIView):
+    serializer_class = TaskSerializer
+    queryset = Task.objects.all()
