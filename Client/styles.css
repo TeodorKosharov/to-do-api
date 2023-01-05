@@ -12,7 +12,7 @@ form {
     text-align: center;
 }
 
-.edit-task-title, .list-tasks-title {
+.details-task-title, .list-tasks-title, .edit-task-title, .delete-task-title {
     padding-top: 3em;
 }
 

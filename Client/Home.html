@@ -14,23 +14,49 @@
 <h2>Add task</h2>
 <form class="add-task-form" method="POST" onsubmit="handleAddTaskForm()">
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" placeholder="Task name">
+    <input type="text" id="name" name="name" placeholder="Task name" required>
 
     <label for="difficulty">Difficulty:</label>
-    <input type="text" id="difficulty" name="difficulty" placeholder="Task difficulty">
+    <input type="text" id="difficulty" name="difficulty" placeholder="Task difficulty" required>
 
     <label for="priority">Priority:</label>
-    <input type="text" id="priority" name="priority" placeholder="Task priority">
+    <input type="text" id="priority" name="priority" placeholder="Task priority" required>
 
     <button id="add-btn" type="submit">Add</button>
 </form>
 
-<!-- Edit task -->
-<h2 class="edit-task-title">Details task</h2>
-<form class="details-task-form" method="POST" onsubmit="handleDetailsForm()">
+<!-- Details task -->
+<h2 class="details-task-title">Details task</h2>
+<form class="details-task-form" onsubmit="handleDetailsForm()">
     <label for="task-name">Task name: </label>
-    <input type="text" id="task-name" name="task-name" placeholder="Task name...">
+    <input type="text" id="task-name" name="task-name" placeholder="Task name..." required>
     <button id="add-btn" type="submit">Details</button>
+</form>
+
+<!-- Edit task -->
+<h2 class="edit-task-title">Edit task</h2>
+<form class="edit-task-form" onsubmit="handleEditForm()">
+    <label for="edit-task-name">Name:</label>
+    <input type="text" id="edit-task-name" name="name" placeholder="Task name..." required> <br> <br>
+
+    <label for="new-task-name">New name:</label>
+    <input type="text" id="new-task-name" name="new-name" placeholder="New task name..." required>
+
+    <label for="new-task-difficulty">New Difficulty:</label>
+    <input type="text" id="new-task-difficulty" name="new-difficulty" placeholder="New task difficulty" required>
+
+    <label for="new-task-priority">New Priority:</label>
+    <input type="text" id="new-task-priority" name="new-priority" placeholder="New task priority" required>
+
+    <button id="edit-btn" type="submit">Edit</button>
+</form>
+
+<!-- Delete task -->
+<h2 class="delete-task-title">Delete task</h2>
+<form class="delete-task-form" onsubmit="handleDeleteForm()">
+    <label for="delete-task-name">Task name: </label>
+    <input type="text" id="delete-task-name" name="task-name" placeholder="Task name..." required>
+    <button id="add-btn" type="submit">Delete</button>
 </form>
 
 <!-- List tasks -->
