@@ -1,3 +1,5 @@
+const ipv4Address = '3.83.24.165:8000';
+
 window.onload = populateTasksList;
 
 function customAlert(icon, title, text, html) {
@@ -16,7 +18,7 @@ async function handleAddTaskForm() {
     const priority = formData.get('priority');
     event.target.reset();
 
-    const response = await fetch('http://127.0.0.1:8000/create-task/', {
+    const response = await fetch(`http://${ipv4Address}/create-task/`, {
         method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({
             name, difficulty, priority
         })
@@ -34,7 +36,7 @@ async function handleAddTaskForm() {
 async function handleDetailsForm() {
     event.preventDefault();
     const taskNameInput = document.getElementById('task-name');
-    const result = await (await fetch(`http://127.0.0.1:8000/details/${taskNameInput.value}/`)).json();
+    const result = await (await fetch(`http://${ipv4Address}/details/${taskNameInput.value}/`)).json();
     taskNameInput.value = '';
 
     if (typeof result === 'string') customAlert('error', 'Oops...', 'There is no task with such name!'); else customAlert('success', 'Task found', undefined, `<div>Name: ${result.name}</div>    
@@ -52,7 +54,7 @@ async function handleEditForm() {
     const priority = formData.get('new-priority');
     event.target.reset();
 
-    const response = await fetch(`http://127.0.0.1:8000/edit-task/${name}/`, {
+    const response = await fetch(`http://${ipv4Address}/edit-task/${name}/`, {
         method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({
             currentName, name, difficulty, priority
         })
@@ -70,7 +72,7 @@ async function handleDeleteForm() {
     event.preventDefault();
 
     const taskNameInput = document.getElementById('delete-task-name');
-    const response = await fetch(`http://127.0.0.1:8000/delete-task/${taskNameInput.value}/`, {
+    const response = await fetch(`http://${ipv4Address}/delete-task/${taskNameInput.value}/`, {
         method: 'DELETE', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({
             "taskName": taskNameInput.value
         })
@@ -86,7 +88,7 @@ async function handleDeleteForm() {
 }
 
 async function populateTasksList() {
-    const tasks = await (await fetch('http://127.0.0.1:8000/tasks/')).json();
+    const tasks = await (await fetch(`http://${ipv4Address}/tasks/`)).json();
     const tasksList = document.getElementById('tasks-list');
     tasksList.textContent = '';
     if (tasks.length) {
