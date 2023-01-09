@@ -17,7 +17,9 @@ pip install -r requirements.txt
 
 
 ### Usage
-The application can be used by Home.html file located in the Client's folder. Simply open Home.html file in the browser.
+The application can be used by Home.html file located in the Client's folder. Simply open Home.html file in the browser through PyCharm:
+
+<img src="https://res.cloudinary.com/hhmf7fxle/image/upload/v1673270322/web_acp3la.png" width="120" height="50" />
 
 Client-localhost is used for localhost requests. The local server should be running:
 ```
