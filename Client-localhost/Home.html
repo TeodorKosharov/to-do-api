@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To do app client</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="formsHandlers.js" defer></script>
+</head>
+<body>
+<h1>To do app</h1>
+
+<!-- Add task -->
+<div class="add-task-section">
+    <h2>Add task</h2>
+    <form class="add-task-form" method="POST" onsubmit="handleAddTaskForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Task name" required>
+
+        <label for="difficulty">Difficulty: <br>
+            <select name="difficulty">
+                <option value="easy">easy</option>
+                <option value="medium">medium</option>
+                <option value="hard">hard</option>
+            </select>
+        </label> <br>
+
+        <label for="priority">Priority:</label>
+        <input type="text" id="priority" name="priority" placeholder="Task priority" required>
+
+        <button class="add-btn" type="submit">Add</button>
+    </form>
+</div>
+
+<!-- Details task -->
+<div class="details-task-section">
+    <h2 class="details-task-title">Details task</h2>
+    <form class="details-task-form" onsubmit="handleDetailsForm()">
+        <label for="task-name">Task name: </label>
+        <input type="text" id="task-name" name="task-name" placeholder="Task name..." required>
+        <button class="details-btn" type="submit">Details</button>
+    </form>
+</div>
+
+<!-- Edit task -->
+<div class="edit-task-section">
+    <h2 class="edit-task-title">Edit task</h2>
+    <form class="edit-task-form" onsubmit="handleEditForm()">
+        <label for="edit-task-name">Name:</label>
+        <input type="text" id="edit-task-name" name="name" placeholder="Task name..." required> <br> <br>
+
+        <label for="new-task-name">New name:</label>
+        <input type="text" id="new-task-name" name="new-name" placeholder="New task name..." required>
+
+        <label for="new-difficulty">New difficulty: <br>
+            <select name="new-difficulty">
+                <option value="easy">easy</option>
+                <option value="medium">medium</option>
+                <option value="hard">hard</option>
+            </select>
+        </label> <br>
+
+        <label for="new-task-priority">New priority:</label>
+        <input type="text" id="new-task-priority" name="new-priority" placeholder="New task priority" required>
+
+        <button class="edit-btn" type="submit">Edit</button>
+    </form>
+</div>
+
+<!-- Delete task -->
+<div class="delete-task-section">
+    <h2 class="delete-task-title">Delete task</h2>
+    <form class="delete-task-form" onsubmit="handleDeleteForm()">
+        <label for="delete-task-name">Task name: </label>
+        <input type="text" id="delete-task-name" name="task-name" placeholder="Task name..." required>
+        <button class="delete-btn" type="submit">Delete</button>
+    </form>
+</div>
+
+<!-- List tasks -->
+<div class="list-task-section">
+    <h2 class="list-tasks-title">List of all tasks</h2>
+    <div class="tasks-list-box">
+        <ul id="tasks-list"></ul>
+    </div>
+</div>
+</body>
+</html>

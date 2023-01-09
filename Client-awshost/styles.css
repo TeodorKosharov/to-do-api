@@ -54,6 +54,13 @@ label {
     font-size: 1.2vw;
 }
 
+select {
+    border-radius: 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    width: 10em;
+}
+
 .add-task-section, .edit-task-section {
     border-style: solid;
     border-color: white;

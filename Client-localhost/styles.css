@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+body {
+    background-image: url('to_do_app_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding-bottom: 3em;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+form {
+    font-size: 1.3em;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+button {
+    font-family: 'Roboto Condensed', sans-serif;
+    border-radius: 2em;
+    font-size: 1vw;
+    margin-top: 1em;
+}
+
+li {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+}
+
+input {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgba(61, 65, 62, 0.89);
+}
+
+input {
+    border-style: solid;
+    border-radius: 3em;
+}
+
+label {
+    font-size: 1.2vw;
+}
+
+select {
+    border-radius: 1em;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    width: 10em;
+}
+
+.add-task-section, .edit-task-section {
+    border-style: solid;
+    border-color: white;
+    border-radius: 2em;
+    padding-bottom: 2em;
+    width: 10em;
+    left: 15em;
+    position: fixed;
+    line-height: 2em;
+    transition: 0.3s;
+}
+
+.add-task-section:hover, .edit-task-section:hover, .list-task-section:hover,
+.details-task-section:hover, .delete-task-section:hover {
+    transform: scale(1.05);
+}
+
+.add-task-section {
+    margin-top: 3em;
+}
+
+.edit-task-section {
+    left: 30em;
+}
+
+.edit-task-title {
+    margin-top: -2.1em;
+}
+
+.details-task-section, .delete-task-section, .list-task-section {
+    border-style: solid;
+    border-color: white;
+    border-radius: 2em;
+    position: fixed;
+    transition: 0.3s;
+}
+
+.delete-task-section, .details-task-section {
+    left: 45em;
+
+    width: 10em;
+    height: 11em;
+}
+
+.delete-task-section {
+    margin-top: 16.3em;
+}
+
+.delete-task-title, .details-task-title {
+    margin-top: -2em;
+}
+
+.list-task-section {
+    left: 70em;
+    width: 15em;
+    transition: 0.3s;
+}
+
+.list-tasks-title {
+    margin-top: -2em;
+}
+
+.details-task-title, .list-tasks-title, .edit-task-title, .delete-task-title {
+    padding-top: 3em;
+}
+
+.tasks-list-box {
+    margin-left: 2em;
+}
+
+.swal2-html-container {
+    font-family: 'Roboto Condensed', sans-serif;
+}

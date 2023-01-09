@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from to_do_app.core.models import Task
 from to_do_app.core.serializers import TaskSerializer
 from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView, DestroyAPIView
-from to_do_app.core.utils import get_appropriate_invalid_serializer_response
+from to_do_app.core.utils import get_appropriate_serializer_error
 
 
 @api_view(['GET', 'POST'])
@@ -28,7 +28,7 @@ class CreateTask(CreateAPIView):
         if serializer.is_valid():
             serializer.save()
             return Response('Task created successfully!')
-        return get_appropriate_invalid_serializer_response(serializer, 'create task')
+        return Response(get_appropriate_serializer_error(serializer))
 
 
 class EditTask(UpdateAPIView):
@@ -44,9 +44,8 @@ class EditTask(UpdateAPIView):
             if serializer.is_valid():
                 serializer.save()
                 return Response('Task updated!')
-            return get_appropriate_invalid_serializer_response(serializer, 'edit task')
-
-        return Response('Task not found!')
+            return Response(get_appropriate_serializer_error(serializer))
+        return Response('There is no task with such name!')
 
 
 class DeleteTask(DestroyAPIView):
@@ -59,7 +58,7 @@ class DeleteTask(DestroyAPIView):
         if instance:
             self.destroy(request, args, kwargs)
             return Response('Task deleted!')
-        return Response('Task not found!')
+        return Response('There is no task with such name!')
 
 
 class ListTasks(ListAPIView):

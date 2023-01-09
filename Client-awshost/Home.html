@@ -17,8 +17,13 @@
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" placeholder="Task name" required>
 
-        <label for="difficulty">Difficulty:</label>
-        <input type="text" id="difficulty" name="difficulty" placeholder="Task difficulty" required>
+        <label for="difficulty">Difficulty: <br>
+            <select name="difficulty">
+                <option value="easy">easy</option>
+                <option value="medium">medium</option>
+                <option value="hard">hard</option>
+            </select>
+        </label> <br>
 
         <label for="priority">Priority:</label>
         <input type="text" id="priority" name="priority" placeholder="Task priority" required>
@@ -47,10 +52,15 @@
         <label for="new-task-name">New name:</label>
         <input type="text" id="new-task-name" name="new-name" placeholder="New task name..." required>
 
-        <label for="new-task-difficulty">New Difficulty:</label>
-        <input type="text" id="new-task-difficulty" name="new-difficulty" placeholder="New task difficulty" required>
+        <label for="new-difficulty">New difficulty: <br>
+            <select name="new-difficulty">
+                <option value="easy">easy</option>
+                <option value="medium">medium</option>
+                <option value="hard">hard</option>
+            </select>
+        </label> <br>
 
-        <label for="new-task-priority">New Priority:</label>
+        <label for="new-task-priority">New priority:</label>
         <input type="text" id="new-task-priority" name="new-priority" placeholder="New task priority" required>
 
         <button class="edit-btn" type="submit">Edit</button>

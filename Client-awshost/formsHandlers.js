@@ -77,7 +77,7 @@ async function handleDeleteForm() {
     });
     taskNameInput.value = '';
     const message = await response.json();
-    if (message === 'Task not found!') {
+    if (message === 'There is no task with such name!') {
         customAlert('error', 'Oops...', message);
     } else {
         customAlert('success', 'Success', message);
